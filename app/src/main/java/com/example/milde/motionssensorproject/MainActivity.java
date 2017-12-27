@@ -10,19 +10,17 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity implements SensorEventListener{
     private SensorManager sensorManager;
-    private Sensor gyroSensor;
+    private Sensor sensor;
     private TextView tvSensorXVal, tvSensorYVal, tvSensorZVal;
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        gyroSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sensorManager.registerListener(this, gyroSensor,
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sensorManager.registerListener(this, sensor,
                 SensorManager.SENSOR_DELAY_NORMAL);
     }
 
